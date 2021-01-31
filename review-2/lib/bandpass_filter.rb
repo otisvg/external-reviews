@@ -6,15 +6,15 @@ class BandpassFilter
     @max_bound = 100
   end
 
-  def set_min_bound(frequency)
+  def set_min(frequency)
     @min_bound = frequency
   end
 
-  def set_max_bound(frequency)
+  def set_max(frequency)
     @max_bound = frequency
   end
 
-  def filter_soundwave(soundwave)
+  def filter(soundwave)
     soundwave.map do |freq|
       freq = min_bound if freq < min_bound
       freq = max_bound if freq > max_bound
