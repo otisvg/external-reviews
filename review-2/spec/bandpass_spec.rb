@@ -33,5 +33,9 @@ describe BandpassFilter do
       @bandpass_filter.set_max(31)
       expect(@bandpass_filter.filter([10, 20, 40])).to eq [30, 30, 31]
     end
+
+    it 'default minimum and maximum bounds are 40 and 100 respectively' do
+      expect(@bandpass_filter.filter([39, 101])).to eq [40, 100]
+    end
   end
 end
