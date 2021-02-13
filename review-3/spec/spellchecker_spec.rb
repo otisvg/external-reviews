@@ -12,5 +12,9 @@ describe Spellchecker do
      expect(spellchecker.check(words)).to eq("These words are spelt correctly")
    end
 
+   it 'returns words each wrapped in tildes if all are incorrectly spelt' do
+     words = "Thse wrods rae splrt ncorretly"
+     expect(spellchecker.check(words)).to eq("~Thse~ ~wrods~ ~rae~ ~splrt~ ~ncorretly~")
+   end
  end
 end
