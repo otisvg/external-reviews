@@ -6,14 +6,14 @@ class Spellchecker
  
  def check(words)
    words.split(" ").map do |word| 
-     invalid?(word)
+     valid?(word)
    end.join(" ")
  end
  
  
  private
  
- def invalid?(word)
+ def valid?(word)
    @word_bank.include?(word) ? word : "~#{word}~"
  end
 end
